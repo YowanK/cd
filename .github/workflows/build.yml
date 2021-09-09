@@ -18,3 +18,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+- name: Archive dependency check reports
+  uses: actions/upload-artifact@v1
+  with:
+    name: reports
+    path: reports
+    - uses: sburris/dependency-check-action@master
+      with:
+       Project-Name: TestApp
