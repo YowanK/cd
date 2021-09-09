@@ -17,4 +17,4 @@ jobs:
             password: ${{ secrets.DOCKER_PASSWORD }}
             registry: docker.io
             repository: yowank/cd
-            tag_with_sha: true
+            tags: ${{ github.sha }}
