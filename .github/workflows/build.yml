@@ -18,6 +18,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
       - name: Install NPM dependencies
         run: |
           npm install --production --unsafe-perm
