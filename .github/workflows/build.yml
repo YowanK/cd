@@ -29,7 +29,7 @@ jobs:
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: 'docker.io/yowank/isen2021:latest' #${{ github.sha }}
+          image-ref: 'docker.io/yowank/cd:latest' #${{ github.sha }}
           format: 'table'
           exit-code: '1'
           ignore-unfixed: true
