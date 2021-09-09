@@ -18,6 +18,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      - name: Install NPM dependencies
+        run: |
+          npm install --production --unsafe-perm
       - uses: sburris/dependency-check-action@master
         with:
           Project-Name: TestApp
